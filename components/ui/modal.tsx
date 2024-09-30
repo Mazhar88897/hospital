@@ -2,7 +2,14 @@
 import React from "react";
 import { Button } from "@/components/ui/button";
 
-const Modal = ({ isOpen, onClose, children, title }) => {
+interface ModalProps {
+  isOpen: boolean;  // Boolean to control modal visibility
+  onClose: () => void;  // Function to close the modal
+  children: React.ReactNode;  // Children can be any valid JSX
+  title: string;  // Title of the modal (string)
+}
+
+const Modal: React.FC<ModalProps> = ({ isOpen, onClose, children, title }) => {
   if (!isOpen) return null;
 
   return (
