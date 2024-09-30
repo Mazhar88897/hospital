@@ -146,7 +146,7 @@ const BookAppointment = () => {
               value={providerId}
               onChange={(e) => setProviderId(e.target.value)}
               required
-              defaultValue={providerId} // Fill with provider ID if available
+              // defaultValue={providerId} // Fill with provider ID if available
             />
           </div>
           <div>
