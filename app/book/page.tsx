@@ -1,5 +1,5 @@
 "use client";
-import { useEffect, useState } from "react";
+import { useEffect, useState, Suspense } from "react";
 import { useSearchParams } from "next/navigation";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -97,7 +97,7 @@ const BookAppointment = () => {
       return;
     }
 
-    const res = await fetch("/api/appointments/reshedule", {
+    const res = await fetch("/api/appointments/reschedule", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -146,7 +146,6 @@ const BookAppointment = () => {
               value={providerId}
               onChange={(e) => setProviderId(e.target.value)}
               required
-              // defaultValue={providerId} // Fill with provider ID if available
             />
           </div>
           <div>
@@ -221,4 +220,10 @@ const BookAppointment = () => {
   );
 };
 
-export default BookAppointment;
+const BookAppointmentWrapper = () => (
+  <Suspense fallback={<div>Loading...</div>}>
+    <BookAppointment />
+  </Suspense>
+);
+
+export default BookAppointmentWrapper;
