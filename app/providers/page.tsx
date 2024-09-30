@@ -8,7 +8,7 @@ import { Label } from "@/components/ui/label";
 import { toast } from "react-toastify";
 
 interface Provider {
-  id: string;
+  _id: string;
   facilityName: string;
   doctorName: string;
   specialty: string;
