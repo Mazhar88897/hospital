@@ -77,7 +77,7 @@ const Providers = () => {
         ) : (
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {providers.map((provider) => (
-              <div key={provider.id} className="bg-white shadow-lg rounded-lg p-6 transition-transform transform hover:scale-105 hover:shadow-xl border border-gray-200">
+              <div key={provider._id} className="bg-white shadow-lg rounded-lg p-6 transition-transform transform hover:scale-105 hover:shadow-xl border border-gray-200">
                 <h2 className="text-xl font-semibold text-blue-600">{provider.facilityName}</h2>
                 <p className="text-gray-700">{provider.doctorName}</p>
                 <p className="text-gray-500 italic">{provider.specialty}</p>
